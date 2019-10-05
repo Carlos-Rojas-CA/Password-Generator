@@ -7,6 +7,10 @@ var specialCharTrue=false;
 var checkPasswordTypes;
 var count=0;
 var i=0;
+var passwordEl = document.querySelector('#password');
+var generateEl = document.querySelector('#generate');
+var copyEl = document.querySelector('#copy');
+
 
 
 // window.onload = function(){
@@ -19,7 +23,7 @@ var i=0;
 window.addEventListener('load', function() {
     lengthPass = parseInt(prompt("How long of a password would you like? (8-128)"))
     lengthNumberCheck = Number.isInteger(lengthPass);
-    console.log(lengthNumberCheck);
+    // console.log(lengthNumberCheck);
     checkLength();
  },);
 
@@ -32,11 +36,11 @@ function checkLength(){
         while(lengthPass < 8 || lengthPass > 128 || lengthNumberCheck == false ){
             lengthPass = parseInt(prompt("Enter a length between (8-128)"))
             lengthNumberCheck = Number.isInteger(lengthPass);
-            console.log(lengthPass)
-            console.log(lengthNumberCheck)
+            // console.log(lengthPass)
+            // console.log(lengthNumberCheck)
         }
         lengthPass = Math.round(lengthPass);
-        console.log("here")
+        // console.log("here")
         passwordType();
 
     }
@@ -107,10 +111,29 @@ function generatePassword(l, u, n, s, lP){
         password = password + passArray[Math.floor(Math.random() * passArray.length)];
     }
     
-    console.log(passString)
-    console.log(passArray[1])
-    console.log(password)
+    // console.log(passString)
+    // console.log(passArray[1])
+    // console.log(password)
+    passwordEl.textContent = password;
 
 }
+
+generateEl.addEventListener("click", function(){
+    lowerCase = false;
+    upperCase = false;
+    lengthPass = 0;
+    lengthNumberCheck = false;
+    numberTrue = false;
+    specialCharTrue = false;
+    checkLength();
+})
+
+function copy() {
+    var copyText = document.querySelector("#password");
+    copyText.select();
+    document.execCommand("copy");
+  }
+  
+  document.querySelector("#copy").addEventListener("click", copy);
 
 // checkLength()
