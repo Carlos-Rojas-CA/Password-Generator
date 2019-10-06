@@ -20,12 +20,12 @@ var copyEl = document.querySelector('#copy');
 //     checkLength();
 // }
 
-window.addEventListener('load', function() {
-    lengthPass = parseInt(prompt("How long of a password would you like? (8-128)"))
-    lengthNumberCheck = Number.isInteger(lengthPass);
-    // console.log(lengthNumberCheck);
-    checkLength();
- },);
+// window.addEventListener('load', function() {
+//     lengthPass = parseInt(prompt("How long of a password would you like? (8-128)"))
+//     lengthNumberCheck = Number.isInteger(lengthPass);
+//     // console.log(lengthNumberCheck);
+//     checkLength();
+//  },);
 
 function checkLength(){
     if(lengthPass>=8 && lengthPass<=128 && lengthNumberCheck){
@@ -111,9 +111,9 @@ function generatePassword(l, u, n, s, lP){
         password = password + passArray[Math.floor(Math.random() * passArray.length)];
     }
     
-    // console.log(passString)
-    // console.log(passArray[1])
-    // console.log(password)
+    console.log(passString)
+    console.log(passArray[1])
+    console.log(password)
     passwordEl.textContent = password;
 
 }

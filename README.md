@@ -11,3 +11,8 @@
 ### 3rd commit: Shows password in text box area. Made the buttons operationals.
 
 ### 4th commit: Update ReadMe. To-Do: maybe use radial buttons instead of prompts. Should me more user-friendly, AKA less annoying.
+
+## Fifth commit update README
+## https://carlos-rojas-ca.github.io/BootCamp/2-Responsive-Portfolio/
+
+![alt text](assets/Preview.png "image")
